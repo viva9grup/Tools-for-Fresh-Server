@@ -16,7 +16,7 @@ if [ "${host}" = "" ]; then
   exit 1
 fi
 
-ssh-keygen -b 2048 -t rsa -f /root/.ssh/"$file$name" -q -N "" <<< $'\ny' >/dev/null 2>&1
+ssh-keygen -b 2048 -t rsa -f /root/.ssh/"$host" -q -N "" <<< $'\ny' >/dev/null 2>&1
 
 export SSHPASS="$password"
 sshpass -e ssh-copy-id -i /root/.ssh/"$file$name".pub -o StrictHostKeyChecking=no "$username"@"$host"
