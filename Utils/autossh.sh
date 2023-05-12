@@ -3,7 +3,7 @@
 # The script will automatically generate and install RSA public/private key pairs to a list of hosts
 # where access is required with no password.
 #
-
+apt install sshpass
 host="$1"
 port="$2"
 username="$3"
