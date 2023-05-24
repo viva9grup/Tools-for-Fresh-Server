@@ -19,7 +19,7 @@ fi
 ssh-keygen -b 2048 -t rsa -f /root/.ssh/"$host" -q -N "" <<< $'\ny' >/dev/null 2>&1
 
 export SSHPASS="$password"
-sshpass -e ssh-copy-id -i /root/.ssh/"$file$name".pub -o StrictHostKeyChecking=no "$username"@"$host"
+sshpass -e ssh-copy-id -i /root/.ssh/"$host".pub -o StrictHostKeyChecking=no "$username"@"$host"
 
 echo "" >> /root/.ssh/config
 echo "Host $file$name $host" >> /root/.ssh/config
